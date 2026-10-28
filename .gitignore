@@ -1,0 +1,47 @@
+.build/
+DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+.DS_Store
+
+# Private working instructions, session notes, experiments, and release credentials
+.local/
+AGENTS.md
+docs/STATUS.md
+docs/STATUS_HISTORY.md
+docs/DESIGN.md
+docs/COPY.md
+docs/MANUAL_TESTS.md
+docs/CODEC_VALIDATION.md
+docs/design/
+scripts/render-*.py
+scripts/render-typography.swift
+
+# Regenerate the Xcode project from project.yml; exclude all user state
+Saptak.xcodeproj/
+.swiftpm/
+Design/*.png
+
+# Distribution output and authentication material
+build/
+*.xcarchive/
+*.ipa
+*.dSYM/
+*.p8
+*.p12
+*.mobileprovision
+*.provisionprofile
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.aws/
+*.key
+*.pem
+*.cer
+__pycache__/
+
+# Internal planning lives outside the public product documentation
+/docs/GROWTH.md

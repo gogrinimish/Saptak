@@ -1,0 +1,2 @@
+// Optional checkout-local team settings; never commit the included file.
+#include? "../.local/release/signing.xcconfig"
