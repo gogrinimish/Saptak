@@ -12,7 +12,7 @@ EXACT_FILES = (
     'scripts/capture-store-screenshots.py', 'scripts/normalize-screenshots.swift',
     'docs/images/iphone-library.png', 'docs/images/iphone-player.png', 'docs/images/mac-library.png',
     'App/Fonts/Alice-Regular.ttf', 'App/Fonts/OFL.txt',
-    'site/guides/play-your-own-audio-on-iphone.html', 'docs/WEBSITE.md', 'site/index.html', 'site/sitemap.xml', 'site/privacy.html', 'site/styles.css', 'site/.nojekyll',
+    'site/guides/play-your-own-audio-on-iphone.html', 'docs/WEBSITE.md', 'site/index.html', 'site/sitemap.xml', 'site/support.html', 'site/privacy.html', 'site/styles.css', 'site/.nojekyll',
     'site/assets/fonts/Alice-Regular.ttf', 'site/assets/fonts/OFL.txt',
     'site/assets/icon.svg', 'site/assets/iphone-library.png', 'site/assets/iphone-player.png', 'site/assets/mac-library.png',
     'scripts/prepare-public-release.py', 'scripts/generate-app-icons.py', 'scripts/probe-codecs.swift',

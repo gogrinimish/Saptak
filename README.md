@@ -6,7 +6,7 @@ Saptak is an open-source audio player for iPhone, iPad and Mac. Play music, voic
 
 Your original files stay where you keep them. No accounts, analytics, subscriptions, backend services or permanent audio imports.
 
-[Website](https://gogrinimish.github.io/Saptak/) · [Privacy](https://gogrinimish.github.io/Saptak/privacy.html)
+[Website](https://gogrinimish.github.io/Saptak/) · [Support](https://gogrinimish.github.io/Saptak/support.html) · [Privacy](https://gogrinimish.github.io/Saptak/privacy.html)
 
 ## Screenshots
 
