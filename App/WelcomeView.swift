@@ -61,6 +61,12 @@ struct WelcomeContent: View {
                     .buttonStyle(.plain).font(SaptakTypography.text(.callout))
                     .foregroundStyle(theme.accent).frame(minHeight: 44)
                     .accessibilityHint("Explains cloud locations, provider setup and downloads")
+                HStack(spacing: 20) {
+                    Link("Privacy policy", destination: SaptakLinks.privacyPolicy)
+                    Link("Support", destination: SaptakLinks.support)
+                }
+                .font(SaptakTypography.text(.caption))
+                .frame(minHeight: 44)
                 Button("Font license") { showFontLicense = true }
                     .font(SaptakTypography.text(.caption)).frame(minHeight: 44)
             }

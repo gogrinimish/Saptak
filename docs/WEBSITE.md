@@ -1,10 +1,10 @@
 # Product Website
 
-`site/` is a dependency-free static GitHub Pages product site. It contains only reviewed public copy, the approved icon, and three fictional-data app screenshots. There is no executable JavaScript, analytics, external font request, cookie banner or application service. The homepage includes non-executable JSON-LD describing the app, plus visible FAQs and a linked getting-started guide. The optional support button is a plain external link. The privacy page distinguishes the app from GitHub's hosting and external support services.
+`site/` is a dependency-free static GitHub Pages product site. It contains only reviewed public copy, the approved icon, and three fictional-data app screenshots. There is no executable JavaScript, analytics, external font request, cookie banner or application service. The homepage includes non-executable JSON-LD describing the app, plus visible FAQs, a linked getting-started guide and dedicated support page. The optional support button is a plain external link. The privacy page distinguishes the app from GitHub's hosting and external support services.
 
 ## Preview and review
 
-Serve only the site directory, for example `python3 -m http.server 8080 --directory site`, then open http://localhost:8080. Check the home/privacy pages at phone, tablet and desktop widths, keyboard focus, image alternatives, anchors, screenshot loading and horizontal overflow. Honor reduced-motion settings. Changes to this site do not require native app builds.
+Serve only the site directory, for example `python3 -m http.server 8080 --directory site`, then open http://localhost:8080. Check the home/privacy/support pages at phone, tablet and desktop widths, keyboard focus, image alternatives, anchors, screenshot loading and horizontal overflow. Honor reduced-motion settings. Changes to this site do not require native app builds.
 
 Keep availability copy accurate. Do not add an App Store/TestFlight download button without a real public URL. Source is MIT-licensed and available at https://github.com/gogrinimish/Saptak. Do not advertise Cast or promise universal document-provider compatibility. Cloud-provider downloads may consume storage.
 
@@ -14,7 +14,7 @@ Publish **only the contents of `site/`** to the root of a dedicated `gh-pages` b
 
 Choose a publishing source appropriate to the repository and hosting plan. See [GitHub's publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Publish only reviewed website assets; repository visibility is a separate release decision.
 
-When refreshing screenshots, copy the reviewed `docs/images` versions into the matching `site/assets` paths. The icon comes from `Design/AppIcon.svg`. Confirm the published version matches the reviewed source, and verify home, privacy, stylesheet and image URLs after deployment. The site's optional outgoing links are subject to the destination's privacy practices.
+When refreshing screenshots, copy the reviewed `docs/images` versions into the matching `site/assets` paths. The icon comes from `Design/AppIcon.svg`. Confirm the published version matches the reviewed source, and verify home, privacy, support, stylesheet and image URLs after deployment. The site's optional outgoing links are subject to the destination's privacy practices.
 
 ## Public URLs and metadata
 

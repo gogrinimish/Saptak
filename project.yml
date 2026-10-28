@@ -7,7 +7,7 @@ settings:
     ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     GENERATE_INFOPLIST_FILE: YES
     MARKETING_VERSION: 0.1.0
-    CURRENT_PROJECT_VERSION: 10
+    CURRENT_PROJECT_VERSION: 11
     INFOPLIST_KEY_CFBundleShortVersionString: $(MARKETING_VERSION)
     INFOPLIST_KEY_CFBundleVersion: $(CURRENT_PROJECT_VERSION)
     INFOPLIST_KEY_CFBundleDisplayName: Saptak
@@ -72,6 +72,7 @@ targets:
       base:
         PRODUCT_NAME: Saptak
         CODE_SIGN_ENTITLEMENTS: App/SaptakMac.entitlements
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.music
 packages:
   SaptakCore:
     path: .

@@ -21,3 +21,7 @@ The privacy manifest declares no tracking or collected data, and declares app-on
 ## Beta testing
 
 TestFlight distribution and tester feedback are operated by Apple. Do not attach private audio or sensitive screenshots to public issues. Use synthetic examples when reporting problems.
+
+## Policy and support
+
+The public [privacy policy](https://gogrinimish.github.io/Saptak/privacy.html) and [support page](https://gogrinimish.github.io/Saptak/support.html) are linked from the welcome screen and folder actions. Mac also exposes them through Help. They open only when requested; the app does not automatically contact those pages. Support/privacy questions use GitHub issues; reports are public and must not include private audio or account details. The public policy explains local preference retention, deletion and separate OS/provider-managed storage.

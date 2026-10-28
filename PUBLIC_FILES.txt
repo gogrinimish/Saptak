@@ -101,3 +101,4 @@ site/index.html
 site/privacy.html
 site/sitemap.xml
 site/styles.css
+site/support.html

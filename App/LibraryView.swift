@@ -284,6 +284,8 @@ struct LibraryView: View {
             .help("Choose a different audio folder")
             .contextMenu {
                 Button("Using cloud folders") { showCloudHelp = true }
+                Link("Privacy policy", destination: SaptakLinks.privacyPolicy)
+                Link("Support", destination: SaptakLinks.support)
                 Button("Font license") { showFontLicense = true }
             }
             .accessibilityHint("Replaces the selected folder. Your original files stay where they are.")
@@ -352,6 +354,8 @@ struct LibraryView: View {
                 Button { showPicker = true } label: { Label("Change folder…", systemImage: "folder.badge.plus") }
                 Divider()
                 Button { showCloudHelp = true } label: { Label("Using cloud folders", systemImage: "questionmark.circle") }
+                Link("Privacy policy", destination: SaptakLinks.privacyPolicy)
+                Link("Support", destination: SaptakLinks.support)
                 Button("Font license") { showFontLicense = true }
             } label: { Label("Folder actions", systemImage: "ellipsis.circle") }
         }

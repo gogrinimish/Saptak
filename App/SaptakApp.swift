@@ -42,6 +42,12 @@ struct SaptakApp: App {
                 #endif
         }
         #if os(macOS)
+        .commands {
+            CommandGroup(replacing: .help) {
+                Link("Saptak Support", destination: SaptakLinks.support)
+                Link("Privacy Policy", destination: SaptakLinks.privacyPolicy)
+            }
+        }
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentMinSize)
         .defaultSize(width: 1000, height: 720)

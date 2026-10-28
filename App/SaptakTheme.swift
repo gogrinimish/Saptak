@@ -5,6 +5,12 @@ import UIKit
 #endif
 
 
+/// Public help pages; opening them is always an explicit user action.
+enum SaptakLinks {
+    static let privacyPolicy = URL(string: "https://gogrinimish.github.io/Saptak/privacy.html")!
+    static let support = URL(string: "https://gogrinimish.github.io/Saptak/support.html")!
+}
+
 /// One real Regular face. No synthesized weights; semantic text still scales.
 enum SaptakTypography {
     static let fontName = "Alice-Regular"
