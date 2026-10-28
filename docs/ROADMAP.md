@@ -67,6 +67,7 @@ A checked implementation item does not imply all platform/device acceptance is c
 - [x] TestFlight build distributed (availability confirmed by tester).
 - [x] Reproducible screenshot capture with synthetic audio; helpers excluded from Release builds.
 - [x] Prepare reviewed iPhone, iPad and Mac screenshot sets and README previews.
+- [x] Public privacy/support pages and in-app policy/help access.
 - [ ] Upload selected App Store screenshots.
 - [x] Prepare a responsive product website, screenshots and public-facing privacy page.
 - [x] Publish the [product website](https://gogrinimish.github.io/Saptak/).

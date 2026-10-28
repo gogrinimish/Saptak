@@ -37,3 +37,15 @@ See [screenshot capture](SCREENSHOTS.md) for isolated debug capture, synthetic a
 Run `scripts/prepare-public-release.py` to create a new allowlisted preview directory. Only source, synthetic fixtures, final design assets, public docs and selected tooling are exported. Local instructions, status/history, design experiments, account data, user state and distribution artifacts are excluded.
 
 Review the file inventory and contents before creating a public repository. Do not blindly publish the working directory or assume `.gitignore` removes already tracked content/history. Retain the MIT license, verify fixture/asset provenance and avoid personal recordings. No publishing destination or credentials are stored in this repository.
+
+## Store listing and native Mac release
+
+Use the live marketing, [support](https://gogrinimish.github.io/Saptak/support.html) and [privacy](https://gogrinimish.github.io/Saptak/privacy.html) URLs. Privacy/support links are available inside the app; Mac also exposes them through Help. Retain platform-specific review instructions, since Mac uses Finder/sidebar navigation while iOS uses Files/hierarchical navigation. The existing bundle identifier is shared across native platforms; configure their versions under the intended App Store Connect record.
+
+For a native Mac archive, use the SaptakMac scheme with a configured Apple team and automatic signing:
+
+```sh
+xcodebuild -project Saptak.xcodeproj -scheme SaptakMac -configuration Release -destination 'generic/platform=macOS' -archivePath /tmp/SaptakRelease/Saptak-macOS.xcarchive -xcconfig .local/release/signing.xcconfig -allowProvisioningUpdates archive
+```
+
+Use App Store Connect distribution when exporting. Do not mark a build internal-TestFlight-only if it is intended for App Review. Upload success means delivery was accepted; confirm processing completed and select the matching version/build separately for each platform. Review screenshots, privacy answers, age/content declarations, contact details, price/territories and release timing before submitting. Account-holder declarations and private review contacts do not belong in this repository.
