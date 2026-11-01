@@ -30,6 +30,7 @@ App/LibrarySearchView.swift
 App/LibraryView.swift
 App/MacLibraryColumn.swift
 App/MobileLibraryComponents.swift
+App/OriginalFileLocation.swift
 App/OriginalFileSharing.swift
 App/PlaybackArtwork.swift
 App/PlaybackControls.swift
@@ -64,6 +65,7 @@ Tests/SaptakPlatformTests/Fixtures/README.md
 Tests/SaptakPlatformTests/Fixtures/tone.m4a
 Tests/SaptakPlatformTests/LibraryLifecycleTests.swift
 Tests/SaptakPlatformTests/MacLayoutTests.swift
+Tests/SaptakPlatformTests/OriginalFileLocationTests.swift
 Tests/SaptakPlatformTests/OriginalFileSharingTests.swift
 Tests/SaptakPlatformTests/PlaybackRecoveryTests.swift
 Tests/SaptakPlatformTests/PlayerDockLayoutTests.swift

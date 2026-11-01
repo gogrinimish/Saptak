@@ -63,6 +63,8 @@ A checked implementation item does not imply all platform/device acceptance is c
 - [x] Original-file sharing via native transfer UI, provider preparation and retained scoped access.
 - [x] Basic iOS search verified by tester.
 - [ ] Mac search UI, search edge cases and native share/provider acceptance, including cloud-only files and share destinations.
+- [x] Original-file location actions with coordinated read-only inspection and regression coverage.
+- [ ] Native Finder/Files reveal acceptance, including iCloud and third-party providers.
 - [ ] Full accessibility acceptance.
 - [x] TestFlight build distributed (availability confirmed by tester).
 - [x] Reproducible screenshot capture with synthetic audio; helpers excluded from Release builds.

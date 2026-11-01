@@ -109,13 +109,16 @@ extension View {
 struct OriginalFileShareButton: View {
     let track: AudioTrack
     let access: FolderAccess?
+    var compactTitle = false
     @State private var presented = false
 
     var body: some View {
         Button { presented = true } label: {
-            Label("Share original file…", systemImage: "square.and.arrow.up")
+            Label(compactTitle ? "Share" : "Share original file…", systemImage: "square.and.arrow.up")
+                .labelStyle(.titleAndIcon)
         }
         .buttonStyle(SaptakButtonStyle())
+        .accessibilityLabel("Share original file")
         .sheet(isPresented: $presented) {
             OriginalFileShareView(track: track, model: OriginalFileShareModel(access: access))
         }
