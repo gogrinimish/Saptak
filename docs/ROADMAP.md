@@ -72,6 +72,6 @@ A checked implementation item does not imply all platform/device acceptance is c
 - [x] Prepare a responsive product website, screenshots and public-facing privacy page.
 - [x] Publish the [product website](https://gogrinimish.github.io/Saptak/).
 - [x] Release the [MIT-licensed source repository](https://github.com/gogrinimish/Saptak).
-- [ ] Complete App Store preparation and submission.
+- [x] Submit and publish version 0.1.0 for iPhone, iPad and native Mac on the App Store.
 - Dependencies: stable MVP, release-account access and review.
 - Status: In progress. Risks: device acceptance and distribution requirements.
