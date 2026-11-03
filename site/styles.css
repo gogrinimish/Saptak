@@ -23,4 +23,6 @@ h3,strong,b{font-weight:400}
 .header-coffee img{width:16px;height:auto;flex-shrink:0}
 .donation-short-label{display:none}
 @media(max-width:760px){.header-coffee{gap:8px;padding:8px 12px}.donation-label{display:none}.donation-short-label{display:inline}}
-@media(max-width:400px){.site-header nav>a:nth-child(2){display:none}}
+@media(max-width:400px){.site-header nav>a:nth-child(2):not(.header-coffee){display:none}}
+
+.policy code{overflow-wrap:anywhere}
