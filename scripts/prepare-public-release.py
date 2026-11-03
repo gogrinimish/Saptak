@@ -7,7 +7,7 @@ import shutil
 
 EXACT_FILES = (
     '.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'Package.swift', 'project.yml',
-    'docs/ARCHITECTURE.md', 'docs/ROADMAP.md', 'docs/TESTING.md', 'docs/PRIVACY.md', 'docs/RELEASING.md', 'docs/SCREENSHOTS.md',
+    'docs/CARPLAY.md', 'docs/ARCHITECTURE.md', 'docs/ROADMAP.md', 'docs/TESTING.md', 'docs/PRIVACY.md', 'docs/RELEASING.md', 'docs/SCREENSHOTS.md',
     'scripts/validate.sh', 'scripts/archive-ios.sh', 'scripts/check-ios-release.py',
     'scripts/capture-store-screenshots.py', 'scripts/normalize-screenshots.swift',
     'docs/images/iphone-library.png', 'docs/images/iphone-player.png', 'docs/images/mac-library.png',

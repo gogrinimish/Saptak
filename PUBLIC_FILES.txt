@@ -22,6 +22,7 @@ App/Assets.xcassets/AppIcon.appiconset/icon-mac-512.png
 App/Assets.xcassets/AppIcon.appiconset/icon-mac-64.png
 App/Assets.xcassets/Contents.json
 App/AudioMetadata.swift
+App/CarPlayScene.swift
 App/CloudFolderHelpView.swift
 App/Fonts/Alice-Regular.ttf
 App/Fonts/OFL.txt
@@ -30,6 +31,7 @@ App/LibrarySearchView.swift
 App/LibraryView.swift
 App/MacLibraryColumn.swift
 App/MobileLibraryComponents.swift
+App/OriginalFileLocation.swift
 App/OriginalFileSharing.swift
 App/PlaybackArtwork.swift
 App/PlaybackControls.swift
@@ -39,6 +41,7 @@ App/PrivacyInfo.xcprivacy
 App/SaptakApp.swift
 App/SaptakMac.entitlements
 App/SaptakTheme.swift
+App/SaptakiOS.entitlements
 App/ScreenshotCapture.swift
 App/SystemPlayback.swift
 App/WelcomeView.swift
@@ -50,10 +53,13 @@ Design/AppIcon.svg
 LICENSE
 Package.swift
 README.md
+Sources/SaptakCore/CarPlayCatalog.swift
 Sources/SaptakCore/Library.swift
 Sources/SaptakCore/LibrarySearch.swift
 Sources/SaptakCore/PlaybackQueue.swift
+Tests/ReleaseTools/test_carplay_configuration.py
 Tests/ReleaseTools/test_public_release.py
+Tests/SaptakCoreTests/CarPlayCatalogTests.swift
 Tests/SaptakCoreTests/FolderNavigationTests.swift
 Tests/SaptakCoreTests/LibrarySearchTests.swift
 Tests/SaptakCoreTests/LibraryTests.swift
@@ -64,6 +70,7 @@ Tests/SaptakPlatformTests/Fixtures/README.md
 Tests/SaptakPlatformTests/Fixtures/tone.m4a
 Tests/SaptakPlatformTests/LibraryLifecycleTests.swift
 Tests/SaptakPlatformTests/MacLayoutTests.swift
+Tests/SaptakPlatformTests/OriginalFileLocationTests.swift
 Tests/SaptakPlatformTests/OriginalFileSharingTests.swift
 Tests/SaptakPlatformTests/PlaybackRecoveryTests.swift
 Tests/SaptakPlatformTests/PlayerDockLayoutTests.swift
@@ -71,6 +78,7 @@ Tests/SaptakPlatformTests/PlaylistSelectionTests.swift
 Tests/SaptakPlatformTests/SystemPlaybackTests.swift
 Tests/SaptakPlatformTests/TypographyTests.swift
 docs/ARCHITECTURE.md
+docs/CARPLAY.md
 docs/PRIVACY.md
 docs/RELEASING.md
 docs/ROADMAP.md

@@ -1,4 +1,5 @@
 import SwiftUI
+import SaptakCore
 
 struct PlaybackControls: View {
     @EnvironmentObject private var player: PlayerModel
@@ -122,6 +123,11 @@ struct PlaybackControls: View {
         .accessibilityLabel("Repeat mode").accessibilityValue(player.queue.repeatMode.rawValue)
         .help(repeatHelp).disabled(player.queue.tracks.isEmpty)
         .modifier(TransportRowItem())
+        #if os(macOS)
+        if let track = player.queue.current {
+            OriginalFileLocationButton(track: track, access: player.folderAccessForSharing, compact: true)
+        }
+        #endif
     }
 
     private var repeatHelp: String {
@@ -214,6 +220,7 @@ struct ExpandedPlayerView: View {
     @Environment(\.saptakTheme) private var theme
     @EnvironmentObject private var player: PlayerModel
     @State private var showQueue = false
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         NavigationStack {
@@ -223,7 +230,15 @@ struct ExpandedPlayerView: View {
                     SaptakWordmark().foregroundStyle(theme.text)
                     PlaybackControls().clipShape(RoundedRectangle(cornerRadius: 20))
                     if let track = player.queue.current {
-                        OriginalFileShareButton(track: track, access: player.folderAccessForSharing)
+                        if dynamicTypeSize.isAccessibilitySize {
+                            VStack(spacing: 12) { fileActions(for: track) }
+                        } else {
+                            ViewThatFits(in: .horizontal) {
+                                HStack(spacing: 12) { fileActions(for: track) }
+                                    .fixedSize(horizontal: true, vertical: false)
+                                VStack(spacing: 12) { fileActions(for: track) }
+                            }
+                        }
                     }
                     Button { showQueue = true } label: {
                         Label("Up Next · \(player.queue.tracks.count)", systemImage: "list.bullet")
@@ -236,6 +251,12 @@ struct ExpandedPlayerView: View {
             .sheet(isPresented: $showQueue) { QueueView() }
         }
         .tint(theme.accent)
+    }
+
+    @ViewBuilder private func fileActions(for track: AudioTrack) -> some View {
+        OriginalFileLocationButton(track: track, access: player.folderAccessForSharing)
+            .foregroundStyle(theme.accent)
+        OriginalFileShareButton(track: track, access: player.folderAccessForSharing, compactTitle: true)
     }
 }
 

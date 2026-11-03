@@ -53,3 +53,13 @@ Foreground library refresh uses the existing coordinated scanner with a 30-secon
 ## Shared typography
 
 Alice Regular is bundled with its OFL license for app-owned text on iOS and macOS. A shared font factory registers the bundled resource and maps semantic styles to Dynamic Type; already-scaled role sizes use fixed custom fonts to avoid scaling twice. Hierarchy uses sizes, spacing and existing selected-state indicators rather than synthetic bold/italic weights. Unsupported-script glyphs may use native font fallback. OS document pickers, share sheets and system media surfaces remain platform-controlled. Font loading must fail gracefully, while packaging/registration tests catch missing resources before release.
+
+## Original-file location
+
+The Now Playing action retains the playback folder grant and snapshots the selected track at the time of the request. It inspects coordinated file metadata without opening audio bytes, requesting a cloud download or creating an export. Native Mac uses NSWorkspace Finder selection. iOS attempts the Files route described by Apple DTS (shareddocuments), which is not a documented contract; rejection offers the original filename/relative folder and a native document browser starting at the containing folder. Provider routing is best-effort, including when Files accepts a link but cannot reveal the file. The browser never replaces the library root or playback queue. Moving a file is a separate user action in Files/Finder; later refresh/playback uses existing missing-file handling.
+
+The iOS action also offers File location through its context menu/accessibility action, even when Files accepts the link but fails to navigate. The shareddocuments behavior is based on [Apple DTS guidance](https://developer.apple.com/forums/thread/797469?answerId=855165022), not a stability guarantee. The fallback uses [UIDocumentPickerViewController.directoryURL](https://developer.apple.com/documentation/uikit/uidocumentpickerviewcontroller/directoryurl), which is an initial-directory hint, and asCopy=false. It does not change source files or treat picker selections as new playback/library requests. Physical/provider acceptance remains separate from SDK builds and tests.
+
+## CarPlay scene
+
+Version 0.2.0 adds a native iOS CarPlay adapter over the same app-owned LibraryModel and PlayerModel. Only SaptakApp constructs the native system playback output; the scene bridge receives those existing models. CarPlay catalog/paging and selection validation are independent of native templates for automated coverage. See [CarPlay architecture and acceptance gates](CARPLAY.md). Entitlement approval and provider/vehicle acceptance remain distribution gates.

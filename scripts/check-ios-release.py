@@ -6,6 +6,22 @@ import re
 import sys
 
 
+def check_carplay_scene(info):
+    manifest = info.get('UIApplicationSceneManifest', {})
+    if manifest.get('UIApplicationSupportsMultipleScenes') is not True:
+        raise ValueError('CarPlay needs concurrent phone and vehicle scenes')
+    configurations = manifest.get('UISceneConfigurations', {}).get('CPTemplateApplicationSceneSessionRoleApplication', [])
+    if len(configurations) != 1:
+        raise ValueError('CarPlay application scene missing or ambiguous')
+    configuration = configurations[0]
+    if configuration.get('UISceneClassName') != 'CPTemplateApplicationScene':
+        raise ValueError('Incorrect CarPlay scene class')
+    if configuration.get('UISceneDelegateClassName') != 'Saptak.CarPlaySceneDelegate':
+        raise ValueError('Incorrect CarPlay scene delegate runtime name')
+    if not configuration.get('UISceneConfigurationName'):
+        raise ValueError('CarPlay scene configuration name missing')
+
+
 def check(bundle):
     bundle = Path(bundle)
     with (bundle / 'Info.plist').open('rb') as handle:
@@ -25,6 +41,7 @@ def check(bundle):
         raise ValueError('Launch-screen definition missing')
     if not isinstance(info.get('UIApplicationSceneManifest'), dict):
         raise ValueError('Scene manifest missing')
+    check_carplay_scene(info)
     orientations = info.get('UISupportedInterfaceOrientations~ipad', [])
     required = {'UIInterfaceOrientationPortrait', 'UIInterfaceOrientationPortraitUpsideDown',
                 'UIInterfaceOrientationLandscapeLeft', 'UIInterfaceOrientationLandscapeRight'}

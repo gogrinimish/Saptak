@@ -26,6 +26,7 @@ Actual app screens with fictional sample audio.
 - Use shuffle, repeat, Up Next, playback controls and seeking.
 - Search track and folder names across your library, with folder paths to distinguish matches.
 - Share original audio files through the system share interface (track context menus and the iPhone player).
+- Reveal the current original in Finder on Mac, or try Show in Files on iPhone/iPad. Files/provider routing is best-effort; a location/browser fallback is available.
 - Control playback through the system's Now Playing controls and media keys.
 - Read embedded title, artist, album and artwork on playback, with filename fallbacks; browsing does not fetch cloud audio for tags.
 - Access folders through native Apple document providers, including iCloud Drive. Other locations depend on the provider’s folder-access support.
@@ -77,3 +78,7 @@ Playback recovery remembers the last queue and position locally and restores pau
 If Saptak makes room for your audio, you can support its development with an optional coffee.
 
 <a href="https://www.buymeacoffee.com/HWRxT65O5I"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;emoji=&amp;slug=HWRxT65O5I&amp;button_colour=54244f&amp;font_colour=ffffff&amp;font_family=Cookie&amp;outline_colour=ffffff&amp;coffee_colour=FFDD00" alt="Buy me a coffee — support Saptak" height="60"></a>
+
+## Next update
+
+Version 0.2.0 is in development: original-file location actions and native iOS CarPlay support. CarPlay requires Apple entitlement approval and simulator/vehicle acceptance before release. See the [CarPlay implementation and validation plan](docs/CARPLAY.md).
