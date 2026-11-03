@@ -6,7 +6,7 @@
 
 Serve only the site directory, for example `python3 -m http.server 8080 --directory site`, then open http://localhost:8080. Check the home/privacy/support pages at phone, tablet and desktop widths, keyboard focus, image alternatives, anchors, screenshot loading and horizontal overflow. Honor reduced-motion settings. Changes to this site do not require native app builds.
 
-Keep availability copy accurate. Do not add an App Store/TestFlight download button without a real public URL. Source is MIT-licensed and available at https://github.com/gogrinimish/Saptak. Do not advertise Cast or promise universal document-provider compatibility. Cloud-provider downloads may consume storage.
+Keep availability copy accurate. The shared iPhone/iPad/Mac App Store URL is https://apps.apple.com/us/app/saptak/id6826395063. The homepage, guide, support page and README link to that listing. Keep SoftwareApplication download/version/offer data aligned with the released app and visible copy. Source is MIT-licensed and available at https://github.com/gogrinimish/Saptak. Do not advertise Cast or promise universal document-provider compatibility. Cloud-provider downloads may consume storage.
 
 ## GitHub Pages publication
 

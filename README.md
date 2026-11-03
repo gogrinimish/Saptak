@@ -6,6 +6,8 @@ Saptak is an open-source audio player for iPhone, iPad and Mac. Play music, voic
 
 Your original files stay where you keep them. No accounts, analytics, subscriptions, backend services or permanent audio imports.
 
+[Download on the App Store — iPhone, iPad and Mac](https://apps.apple.com/us/app/saptak/id6826395063)
+
 [Website](https://gogrinimish.github.io/Saptak/) · [Support](https://gogrinimish.github.io/Saptak/support.html) · [Privacy](https://gogrinimish.github.io/Saptak/privacy.html)
 
 ## Screenshots
@@ -32,7 +34,7 @@ Actual app screens with fictional sample audio.
 - Find cloud-folder setup and download guidance from the welcome screen or folder actions.
 - Use the iPhone AirPlay picker or Mac system audio routing.
 
-Saptak is in development. Basic Mac playback/persistence/system controls and physical iOS system controls/AirPlay-to-Mac have manual acceptance; mobile UI, broader providers and the full accessibility/codec matrix remain under validation. AirPlay receiver compatibility requires hardware testing. No TestFlight or App Store availability is implied by this repository.
+Version 0.1.0 is available on the App Store for iPhone, iPad and native Mac. Provider compatibility, the full accessibility/codec matrix and additional AirPlay receivers remain subject to device-specific validation; see [testing guidance](docs/TESTING.md).
 
 Provider downloads may use device storage. The active queue is a snapshot; refreshing updates the browser, and starting playback again uses the refreshed folder contents.
 
