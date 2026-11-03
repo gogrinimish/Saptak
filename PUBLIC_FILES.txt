@@ -90,12 +90,16 @@ scripts/prepare-public-release.py
 scripts/probe-codecs.swift
 scripts/validate.sh
 site/.nojekyll
+site/assets/app-store-badge.svg
+site/assets/buy-me-a-coffee.svg
 site/assets/fonts/Alice-Regular.ttf
 site/assets/fonts/OFL.txt
 site/assets/icon.svg
 site/assets/iphone-library.png
 site/assets/iphone-player.png
 site/assets/mac-library.png
+site/assets/saptak-share.png
+site/google1138069fb52db310.html
 site/guides/play-your-own-audio-on-iphone.html
 site/index.html
 site/privacy.html
