@@ -13,8 +13,8 @@ targets += [
         name: "SaptakPlatform",
         dependencies: ["SaptakCore"],
         path: "App",
-        exclude: ["SaptakApp.swift", "Assets.xcassets", "SaptakMac.entitlements", "PrivacyInfo.xcprivacy"],
-        sources: ["LibraryModel.swift", "PlayerModel.swift", "SystemPlayback.swift", "MacLibraryColumn.swift", "MobileLibraryComponents.swift", "LibraryView.swift", "PlaybackControls.swift", "SaptakTheme.swift", "WelcomeView.swift", "CloudFolderHelpView.swift", "PlaybackRecovery.swift", "LibrarySearchView.swift", "OriginalFileSharing.swift", "OriginalFileLocation.swift", "AudioMetadata.swift", "PlaybackArtwork.swift", "ScreenshotCapture.swift"],
+        exclude: ["SaptakApp.swift", "Assets.xcassets", "SaptakMac.entitlements", "SaptakiOS.entitlements", "PrivacyInfo.xcprivacy"],
+        sources: ["LibraryModel.swift", "PlayerModel.swift", "SystemPlayback.swift", "MacLibraryColumn.swift", "MobileLibraryComponents.swift", "LibraryView.swift", "PlaybackControls.swift", "SaptakTheme.swift", "WelcomeView.swift", "CloudFolderHelpView.swift", "PlaybackRecovery.swift", "LibrarySearchView.swift", "OriginalFileSharing.swift", "OriginalFileLocation.swift", "CarPlayScene.swift", "AudioMetadata.swift", "PlaybackArtwork.swift", "ScreenshotCapture.swift"],
         resources: [.copy("Fonts")]
     ),
     .testTarget(name: "SaptakPlatformTests", dependencies: ["SaptakPlatform", "SaptakCore"], resources: [.copy("Fixtures")])

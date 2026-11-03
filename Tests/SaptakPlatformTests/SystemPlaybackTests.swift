@@ -138,6 +138,31 @@ final class SystemPlaybackTests: XCTestCase {
         XCTAssertFalse(output.send(.play))
     }
 
+    @MainActor func testRemoteShuffleAndRepeatPublishIdempotentNativeModes() {
+        let output = RecordingSystemOutput()
+        let player = PlayerModel(systemPlayback: output)
+        defer { player.stop() }
+        let original = tracks()
+        player.play(original, access: nil, startingAt: original[1])
+        XCTAssertTrue(output.send(.shuffle(true)))
+        let order = player.queue.tracks
+        XCTAssertEqual(player.queue.current, original[1])
+        XCTAssertEqual(output.latest?.systemShuffleType, .items)
+        XCTAssertTrue(output.send(.shuffle(true)))
+        XCTAssertEqual(player.queue.tracks, order, "Repeated remote state must not shuffle again")
+        XCTAssertTrue(output.send(.shuffle(false)))
+        XCTAssertEqual(player.queue.tracks, original)
+        XCTAssertEqual(output.latest?.systemShuffleType, .off)
+        for (mode, system) in [(RepeatMode.all, MPRepeatType.all), (.one, .one), (.off, .off)] {
+            XCTAssertTrue(output.send(.repeatMode(mode)))
+            XCTAssertEqual(player.queue.repeatMode, mode)
+            XCTAssertEqual(output.latest?.systemRepeatType, system)
+        }
+        player.stop()
+        XCTAssertFalse(output.send(.shuffle(true)))
+        XCTAssertFalse(output.send(.repeatMode(.all)))
+    }
+
     private func tracks() -> [AudioTrack] {
         (0..<3).map { AudioTrack(url: URL(fileURLWithPath: "/tmp/\(UUID().uuidString)-\($0).m4a")) }
     }

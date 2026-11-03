@@ -2,6 +2,16 @@
 
 A checked implementation item does not imply all platform/device acceptance is complete. Saptak remains in development.
 
+## Next update — 0.2.0
+- Scope: original-file location and iOS CarPlay audio support; current 0.1.0 submission stays separate.
+- [x] Show in Files/Finder implementation and regression coverage.
+- [ ] Show in Files/Finder native/provider acceptance.
+- [x] Native CarPlay folder browsing, recursive playlists, queue and Now Playing implementation with SDK builds and automated regression coverage.
+- [ ] Apple CarPlay audio entitlement approval and matching distribution profile.
+- [ ] CarPlay Simulator and vehicle acceptance, including locked-phone/cold launch and reconnection.
+- [ ] Prepare and validate signed 0.2.0 archives and TestFlight distribution after the release gates pass.
+- Status: In development. See [CarPlay design and acceptance](CARPLAY.md). No Cast or offline-storage changes in this update.
+
 ## Phase 0 — Technical Validation
 - Goal/deliverables: native folder selection, persistent access, recursive scanning, direct playback and codec validation without permanent imports.
 - [x] Mac and iOS Simulator SDK builds; deterministic scanning, queue, permissions-lifecycle and source-read tests.

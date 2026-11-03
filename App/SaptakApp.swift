@@ -17,13 +17,23 @@ struct SaptakApp: App {
         #endif
         #if DEBUG
         if ScreenshotCaptureConfiguration.current != nil {
-            _library = StateObject(wrappedValue: ScreenshotCaptureConfiguration.library())
-            _player = StateObject(wrappedValue: PlayerModel())
+            let library = ScreenshotCaptureConfiguration.library()
+            let player = PlayerModel()
+            _library = StateObject(wrappedValue: library)
+            _player = StateObject(wrappedValue: player)
+            #if os(iOS)
+            CarPlaySession.configure(library: library, player: player)
+            #endif
             return
         }
         #endif
-        _library = StateObject(wrappedValue: LibraryModel())
-        _player = StateObject(wrappedValue: PlayerModel(systemPlayback: NativeSystemPlaybackOutput(), recovery: PlaybackRecoveryStore()))
+        let library = LibraryModel()
+        let player = PlayerModel(systemPlayback: NativeSystemPlaybackOutput(), recovery: PlaybackRecoveryStore())
+        _library = StateObject(wrappedValue: library)
+        _player = StateObject(wrappedValue: player)
+        #if os(iOS)
+        CarPlaySession.configure(library: library, player: player)
+        #endif
     }
 
     @Environment(\.scenePhase) private var scenePhase

@@ -10,6 +10,8 @@ import UIKit
 enum SystemPlaybackCommand: Equatable {
     case play, pause, toggle, next, previous, stop
     case seek(Double)
+    case shuffle(Bool)
+    case repeatMode(RepeatMode)
 }
 
 /// Only presentation data is donated to the OS, never file URLs or folder paths.
@@ -22,6 +24,17 @@ struct SystemPlaybackState: Equatable {
     var isPlaying: Bool
     var isLoading: Bool
     var canGoNext: Bool
+
+    var isShuffled = false
+    var repeatMode: RepeatMode = .off
+    var systemShuffleType: MPShuffleType { isShuffled ? .items : .off }
+    var systemRepeatType: MPRepeatType {
+        switch repeatMode {
+        case .off: return .off
+        case .all: return .all
+        case .one: return .one
+        }
+    }
 
     var artist: String? = nil
     var album: String? = nil
@@ -85,6 +98,19 @@ struct SystemPlaybackState: Equatable {
         register(commands.nextTrackCommand) { _ in .next }
         register(commands.previousTrackCommand) { _ in .previous }
         register(commands.stopCommand) { _ in .stop }
+        register(commands.changeShuffleModeCommand) { event in
+            guard let event = event as? MPChangeShuffleModeCommandEvent else { return nil }
+            return .shuffle(event.shuffleType != .off)
+        }
+        register(commands.changeRepeatModeCommand) { event in
+            guard let event = event as? MPChangeRepeatModeCommandEvent else { return nil }
+            switch event.repeatType {
+            case .off: return .repeatMode(.off)
+            case .all: return .repeatMode(.all)
+            case .one: return .repeatMode(.one)
+            @unknown default: return nil
+            }
+        }
         register(commands.changePlaybackPositionCommand) { event in
             guard let event = event as? MPChangePlaybackPositionCommandEvent,
                   event.positionTime.isFinite else { return nil }
@@ -133,6 +159,10 @@ struct SystemPlaybackState: Equatable {
         commands.previousTrackCommand.isEnabled = state.canPlay
         commands.changePlaybackPositionCommand.isEnabled = state.canSeek
         commands.stopCommand.isEnabled = state.title != nil
+        commands.changeShuffleModeCommand.isEnabled = state.title != nil
+        commands.changeShuffleModeCommand.currentShuffleType = state.systemShuffleType
+        commands.changeRepeatModeCommand.isEnabled = state.title != nil
+        commands.changeRepeatModeCommand.currentRepeatType = state.systemRepeatType
     }
 
     deinit {

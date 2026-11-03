@@ -78,3 +78,7 @@ Playback recovery remembers the last queue and position locally and restores pau
 If Saptak makes room for your audio, you can support its development with an optional coffee.
 
 <a href="https://www.buymeacoffee.com/HWRxT65O5I"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;emoji=&amp;slug=HWRxT65O5I&amp;button_colour=54244f&amp;font_colour=ffffff&amp;font_family=Cookie&amp;outline_colour=ffffff&amp;coffee_colour=FFDD00" alt="Buy me a coffee — support Saptak" height="60"></a>
+
+## Next update
+
+Version 0.2.0 is in development: original-file location actions and native iOS CarPlay support. CarPlay requires Apple entitlement approval and simulator/vehicle acceptance before release. See the [CarPlay implementation and validation plan](docs/CARPLAY.md).

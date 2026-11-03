@@ -201,6 +201,9 @@ import SaptakCore
             next()
         case .previous: previous()
         case .stop: stop()
+        case .shuffle(let enabled):
+            if queue.isShuffled != enabled { toggleShuffle() }
+        case .repeatMode(let mode): queue.repeatMode = mode
         case .seek(let seconds):
             guard seconds.isFinite, duration > 0, !isLoading else { return false }
             seek(to: seconds)
@@ -210,11 +213,13 @@ import SaptakCore
 
     private func publishSystemPlayback() {
         guard let systemPlayback else { return }
-        let state = SystemPlaybackState(title: queue.current == nil ? nil : title, index: queue.index,
+        var state = SystemPlaybackState(title: queue.current == nil ? nil : title, index: queue.index,
                                         count: queue.tracks.count, position: position, duration: duration,
                                         isPlaying: isPlaying, isLoading: isLoading,
                                         canGoNext: queue.index.map { $0 + 1 < queue.tracks.count || queue.repeatMode == .all } ?? false,
                                         artist: metadata.artist, album: metadata.album, artwork: metadata.artwork)
+        state.isShuffled = queue.isShuffled
+        state.repeatMode = queue.repeatMode
         guard state != lastSystemState else { return }
         lastSystemState = state
         systemPlayback.update(state)

@@ -49,3 +49,7 @@ xcodebuild -project Saptak.xcodeproj -scheme SaptakMac -configuration Release -d
 ```
 
 Use App Store Connect distribution when exporting. Do not mark a build internal-TestFlight-only if it is intended for App Review. Upload success means delivery was accepted; confirm processing completed and select the matching version/build separately for each platform. Review screenshots, privacy answers, age/content declarations, contact details, price/territories and release timing before submitting. Account-holder declarations and private review contacts do not belong in this repository.
+
+## Version 0.2.0: CarPlay gate
+
+The 0.2.0 development line includes Show in Files/Finder and native iOS CarPlay. Retain the existing app identifier and user-data keys. Before a device/TestFlight archive, obtain Apple's audio entitlement approval for that identifier and refresh the provisioning profile. Verify the signed iOS app and profile both allow `com.apple.developer.carplay-audio`; a successful simulator SDK build does not establish this. Complete the [CarPlay acceptance matrix](CARPLAY.md) and original-file/provider reveal tests before claiming support in release notes or store material. Mac uses its existing sandbox entitlements and gains Show in Finder. Do not change the website's available-feature claims ahead of the released build.
