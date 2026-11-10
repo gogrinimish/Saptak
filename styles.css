@@ -29,3 +29,6 @@ h3,strong,b{font-weight:400}
 
 .coffee-button{background:var(--cream);color:var(--plum);border-color:var(--plum)}
 .coffee-button:hover,.header-coffee:hover{background:#f4e6e9}
+
+.release-preview .release-status{max-width:740px;margin-top:24px;color:var(--muted);font-size:18px;line-height:1.65}
+.release-preview>p:last-child{margin-top:28px}
